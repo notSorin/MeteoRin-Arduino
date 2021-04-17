@@ -18,7 +18,7 @@ void setup()
   Wire.onReceive(receiveEvent); //Attach a function to trigger when something is received.
 }
 
-//Called whenever data is received throudh I2C.
+//Called whenever data is received through I2C.
 void receiveEvent(int bytes)
 {
   //Read the temperature first, then the humidity;
