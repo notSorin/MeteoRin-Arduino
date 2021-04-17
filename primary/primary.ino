@@ -29,7 +29,7 @@ void loop()
   //Read from the sensor.
   measure_environment(&temperature, &humidity);
 
-  //Send info to the secondary board through I2C.
+  //Send data to the secondary board through I2C.
   Wire.beginTransmission(I2C_ADDRESS);
   Wire.write((int)temperature);
   Wire.write((int)humidity);
