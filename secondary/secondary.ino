@@ -7,9 +7,6 @@ constexpr int TX_PIN = 3;
 
 SoftwareSerial HC06(RX_PIN, TX_PIN);
 
-int temperature = 0;
-int humidity = 0;
-
 void setup()
 {
   Serial.begin(9600);
@@ -22,8 +19,8 @@ void setup()
 void receiveEvent(int bytes)
 {
   //Read the temperature first, then the humidity;
-  temperature = Wire.read();
-  humidity = Wire.read();
+  int temperature = Wire.read();
+  int humidity = Wire.read();
 
   //Create a string with the data, and send it through bluetooth.
   String toSend = String(temperature) + " " + String(humidity);
