@@ -12,6 +12,7 @@ int humidity = 0;
 
 void setup()
 {
+  Serial.begin(9600);
   HC06.begin(9600);
   Wire.begin(I2C_ADDRESS); //Start the I2C Bus as Slave on address 9.
   Wire.onReceive(receiveEvent); //Attach a function to trigger when something is received.
